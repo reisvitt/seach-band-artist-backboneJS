@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Search</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+
+    <script type="text/template" id="video-template">
+      <a class="container" href="<%= url %>"  target="_blank">
+        <img 
+          src="https://agenciamoll.com.br/wp-content/uploads/2019/12/O-que-%C3%A9-URL-e-como-ela-Ajuda-na-sua-Estrat%C3%A9gia-Digital.jpg" 
+          alt="<%= title %>"
+          title="<%= title %>"
+          style="height: 100px; width: 100px;"
+        />
+
+        <div class="info">
+          <h4 title="<%= title %>"><%= title %></h4>
+          <h6 title="<%= channelTitle %>"><%= channelTitle %></h6>
+        </div>
+      </a>
+    </script>
+
+
+    <script type="text/template" id="band-template">
+      <div class="container" href="<%= url %>"  target="_blank">
+        <img 
+          src="https://agenciamoll.com.br/wp-content/uploads/2019/12/O-que-%C3%A9-URL-e-como-ela-Ajuda-na-sua-Estrat%C3%A9gia-Digital.jpg" 
+          alt="<%= title %>"
+          title="<%= title %>"
+          style="height: 100px; width: 100px;"
+        />
+
+        <div class="info">
+          <h4 title="<%= title %>"><%= title %></h4>
+          <h6 title="<%= channelTitle %>"><%= channelTitle %></h6>
+        </div>
+      </div>
+    </script>
+    
+    <script src="bundle.js"></script>
+  </body>
+</html>
