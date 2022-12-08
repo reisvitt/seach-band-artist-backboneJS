@@ -8,6 +8,7 @@ const VideoCollectionView = Backbone.View.extend({
   initialize: function(options){
     this.template = options.template
     this.collection = options.collection
+    this.listenTo(this.collection, 'add', this.renderOne);
   },
 
   populate: function(){
@@ -18,9 +19,8 @@ const VideoCollectionView = Backbone.View.extend({
   },
 
   refresh: function(){
-    //this.loadingMessage('Carregando...');
-    //this.collection.fetch();
-    console.log("REFRESH")
+    this.collection.reset()
+    this.collection.fetch();
   },
 
   render: function() {
@@ -28,12 +28,7 @@ const VideoCollectionView = Backbone.View.extend({
     return this
   },
 
-  loadingMessage: function(message){
-    this?.$('ul')?.text(message);
-  },
-
   renderAll: function(){
-    //this.reset();
     this.collection.forEach(this.renderOne, this);
   },
 
