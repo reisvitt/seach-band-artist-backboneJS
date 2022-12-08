@@ -33,6 +33,12 @@ yarn dev-server
 Open the index.html inside the dist folder
 
 
+## Env
+
+Need to provide a YOUTUBE_API_KEY <br>
+Need to provide a TICKET_MASTER_API_KEY
+
+
 ## Libs
 
 * Backbone
