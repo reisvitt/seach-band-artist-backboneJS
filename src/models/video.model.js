@@ -16,6 +16,7 @@ const VideoModel = Backbone.Model.extend({
       channelTitle: this.get('channelTitle'),
       description: this.get('description'),
       videoId: this.get('videoId'),
+      channelId: this.get('channelId'),
     }
   }
 })
