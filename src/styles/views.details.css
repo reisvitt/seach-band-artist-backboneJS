@@ -1,0 +1,23 @@
+
+section.band-details {
+  width: 100%;
+}
+
+
+@media screen and (min-width: 992px) {
+  section.band-details {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  section.band-details {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  section.band-details {
+    width: 30%;
+  }
+}
