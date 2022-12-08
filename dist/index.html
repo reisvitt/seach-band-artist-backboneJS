@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,900&display=swap" 
+      rel="stylesheet">
+
     <title>Band Search</title>
   </head>
   <body>
@@ -11,19 +17,22 @@
 
 
     <script type="text/template" id="video-template">
-      <a class="container" href="<%= url %>"  target="_blank">
+      <a class="container-image" href="<%= url %>"  target="_blank">
         <img 
           src="https://agenciamoll.com.br/wp-content/uploads/2019/12/O-que-%C3%A9-URL-e-como-ela-Ajuda-na-sua-Estrat%C3%A9gia-Digital.jpg" 
           alt="<%= title %>"
           title="<%= title %>"
-          style="height: 100px; width: 100px;"
         />
+      </a>
 
         <div class="info">
-          <h4 title="<%= title %>"><%= title %></h4>
-          <h6 title="<%= channelTitle %>"><%= channelTitle %></h6>
+          <a href="<%= url %>" target="_blank">
+            <h4 title="<%= title %>"><%= title %></h4>
+          </a>
+          <a target="_blank">
+            <h6 title="<%= channelTitle %>"><%= channelTitle %></h6>
+          </a>
         </div>
-      </a>
     </script>
 
 
