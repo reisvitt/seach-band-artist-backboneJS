@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,900&display=swap" 
+      rel="stylesheet">
+
+    <title>Band Search</title>
+  </head>
+  <body>
+    <form id="container-form" class="container-form">
+      <h1 class="title">Explore o mundo da música</h1>
+      <h3 class="subtitle">Veja os melhores videoclipes da sua banda favorita</h3>
+      <input id="search-input" placeholder="Pesquisar..." />
+    </form>
+
+    <div id="content"></div>
+
+
+    <script type="text/template" id="video-template">
+      <a class="container-image" href="<%= url %>"  target="_blank">
+        <img 
+          src="<%= thumbnails %>" 
+          alt="<%= title %>"
+          title="<%= title %>"
+        />
+      </a>
+
+        <div class="info">
+          <a href="<%= url %>" target="_blank">
+            <h4 title="<%= title %>"><%= title %></h4>
+          </a>
+          <a href="<%= urlChanel %>" target="_blank">
+            <h6 title="<%= channelTitle %>"><%= channelTitle %></h6>
+          </a>
+        </div>
+    </script>
+
+
+    <script type="text/template" id="details-template">
+      <div class="container" href="<%= url %>"  target="_blank">
+        <img 
+          src="<%= imageUrl %>" 
+          alt="<%= name %>"
+          title="<%= name %>"
+        />
+
+        <div class="info">
+          <a href="<%= url %>" target="_blank">
+            <h4 title="<%= name %>"><%= name %></h4>
+          </a>
+
+          <div class="classifications">
+            <% for(var i = 0; i < classifications?.length; ++i){ %>
+              <span class="label">
+                <span class="section"><%= classifications[i].genre.name %></span> 
+              </span>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </script>
+    
+    <script src="bundle.js"></script>
+  </body>
+</html>
