@@ -1,0 +1,59 @@
+
+.video-collection .video {
+  background-color: transparent;
+  border-radius: 1em;
+  overflow: hidden;
+  /*aspect-ratio: 1/0.857;*/
+  transition: transform 0.3s
+}
+
+.video-collection .video:hover{
+  transform: scale(1.02);
+}
+
+.video-collection .video img {
+  aspect-ratio: 169/95;
+  min-width: 100%;
+  max-width: 100%;
+  border-radius: 1em;
+}
+
+.video-collection .video .info {
+  width: 100%;
+  padding-bottom: 0.5em;
+}
+
+.video-collection .video .info h4 {
+  width: 100%;
+  color: var(--black-color);
+  font-size: 1rem;
+  line-height: 2.2rem;
+  font-weight: 500;
+  max-height: 4.4rem;
+  overflow: hidden;
+  display: block;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
+  cursor: pointer;
+  margin: 0;
+}
+
+.video-collection .video .info h6 {
+  width: 100%;
+  color: var(--gray-color);
+  font-size: 0.750rem;
+  line-height: 1rem;
+  font-weight: 400;
+  overflow: hidden;
+  display: block;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
+  cursor: pointer;
+  margin: 0;
+}
