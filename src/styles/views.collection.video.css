@@ -1,6 +1,7 @@
 
 section.video-section{
   flex: 1;
+  padding: 0 2em;
 }
 
 .video-collection {
@@ -9,11 +10,14 @@ section.video-section{
   gap: 1em;
 
   list-style-type: none;
+  padding: 0;
 }
 
 @media screen and (min-width: 992px) {
   .video-collection {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    margin-right: 2em;
   }
 }
 
