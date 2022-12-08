@@ -8,6 +8,14 @@ const VideoModel = Backbone.Model.extend({
 
     return '#'
   },
+
+  getUrlChannel: function(){
+    if(this.get("channelId")){
+      return `https://youtube.com/channel/${this.get("channelId")}`
+    }
+
+    return '#'
+  },
   
   toJSON: function(){
     return {
@@ -17,6 +25,8 @@ const VideoModel = Backbone.Model.extend({
       description: this.get('description'),
       videoId: this.get('videoId'),
       channelId: this.get('channelId'),
+      thumbnails: this.get('thumbnails'),
+      urlChanel: this.getUrlChannel(),
     }
   }
 })
