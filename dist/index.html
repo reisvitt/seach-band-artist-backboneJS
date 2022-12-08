@@ -13,13 +13,19 @@
     <title>Band Search</title>
   </head>
   <body>
-    <div id="app"></div>
+    <form id="container-form" class="container-form">
+      <h1 class="title">Explore o mundo da música</h1>
+      <h3 class="subtitle">Veja os melhores videoclipes da sua banda favorita</h3>
+      <input id="search-input" placeholder="Pesquisar..." />
+    </form>
+
+    <div id="content"></div>
 
 
     <script type="text/template" id="video-template">
       <a class="container-image" href="<%= url %>"  target="_blank">
         <img 
-          src="https://agenciamoll.com.br/wp-content/uploads/2019/12/O-que-%C3%A9-URL-e-como-ela-Ajuda-na-sua-Estrat%C3%A9gia-Digital.jpg" 
+          src="<%= thumbnails %>" 
           alt="<%= title %>"
           title="<%= title %>"
         />
@@ -29,25 +35,33 @@
           <a href="<%= url %>" target="_blank">
             <h4 title="<%= title %>"><%= title %></h4>
           </a>
-          <a target="_blank">
+          <a href="<%= urlChanel %>" target="_blank">
             <h6 title="<%= channelTitle %>"><%= channelTitle %></h6>
           </a>
         </div>
     </script>
 
 
-    <script type="text/template" id="band-template">
+    <script type="text/template" id="details-template">
       <div class="container" href="<%= url %>"  target="_blank">
         <img 
-          src="https://agenciamoll.com.br/wp-content/uploads/2019/12/O-que-%C3%A9-URL-e-como-ela-Ajuda-na-sua-Estrat%C3%A9gia-Digital.jpg" 
-          alt="<%= title %>"
-          title="<%= title %>"
-          style="height: 100px; width: 100px;"
+          src="<%= imageUrl %>" 
+          alt="<%= name %>"
+          title="<%= name %>"
         />
 
         <div class="info">
-          <h4 title="<%= title %>"><%= title %></h4>
-          <h6 title="<%= channelTitle %>"><%= channelTitle %></h6>
+          <a href="<%= url %>" target="_blank">
+            <h4 title="<%= name %>"><%= name %></h4>
+          </a>
+
+          <div class="classifications">
+            <% for(var i = 0; i < classifications?.length; ++i){ %>
+              <span class="label">
+                <span class="section"><%= classifications[i].genre.name %></span> 
+              </span>
+            <% } %>
+          </div>
         </div>
       </div>
     </script>
