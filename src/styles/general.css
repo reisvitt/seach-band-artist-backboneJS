@@ -1,0 +1,34 @@
+@import "./views.video.css";
+@import "./views.collection.video.css";
+@import "./views.details.css";
+
+:root {
+  --light-gray-color: #A9A9A9;
+  --gray-color: #808080;
+  --dark-gray-color: #71797E;
+  --black-color: #0f0f0f;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+#app{
+  display: flex;
+}
