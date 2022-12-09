@@ -18,12 +18,12 @@ jobs:
           yarn
       # Build the SBAB
       - name: Build the SBAB
+        run: |
+          yarn webpack
         with:
           ENVIRONMENT: production
           TICKET_MASTER_API_KEY: ${{ secrets.TICKET_MASTER_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: |
-          yarn webpack
 
       # Push the SBAB's HTML to github-pages
       - name: GitHub Pages action
