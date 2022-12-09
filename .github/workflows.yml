@@ -1,0 +1,32 @@
+name: deploy-search-band-artist-backbone
+
+on:
+  push:
+    branches:
+    - main
+
+# This job installs dependencies, builds the SBAB, and pushes it to `gh-pages`
+jobs:
+  env:
+    ENVIRONMENT: production
+    TICKET_MASTER_API_KEY: ${{ secrets.TICKET_MASTER_API_KEY }}
+    YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+  deploy-SBAB:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    # Install dependencies
+    - name: Install dependencies
+      run: |
+        yarn
+    # Build the SBAB
+    - name: Build the SBAB
+      run: |
+        yarn webpack 
+      with:
+        ENVIRONMENT: 'production'
+
+    # Push the SBAB's HTML to github-pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
