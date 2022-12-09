@@ -23,12 +23,19 @@ jobs:
           ENVIRONMENT: production
           TICKET_MASTER_API_KEY: ${{ secrets.TICKET_MASTER_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-      
-      - name: Check if bundle exist
+  
+      # Echo Secrets - Test
+      - name: Echo Secrets
         run: |
-          [[ -f ./dist/bundle.js ]] && echo "This file exists"
-        
-
+          echo "TickMaster apiKey:  "
+          echo ${{ secrets.TICKET_MASTER_API_KEY }}
+          echo "Youtube apiKey:  "
+          echo ${{ secrets.YOUTUBE_API_KEY }}
+        env:
+          ENVIRONMENT: production
+          TICKET_MASTER_API_KEY: ${{ secrets.TICKET_MASTER_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          
       # Push the SBAB's HTML to github-pages
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.6.1
