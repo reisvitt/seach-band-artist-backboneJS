@@ -5,6 +5,9 @@ on:
     branches:
     - main
 
+env:
+  TICKET_MASTER_API_KEY: ${{ secrets.TICKET_MASTER_API_KEY }}
+  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 # This job installs dependencies, builds the SBAB, and pushes it to `gh-pages`
 jobs:
   deploy-SBAB:
@@ -20,14 +23,7 @@ jobs:
       - name: Build the SBAB
         run: yarn webpack
         env:
-          ENVIRONMENT: production
-          TICKET_MASTER_API_KEY: ${{ secrets.TICKET_MASTER_API_KEY }}
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-      
-      - name: Check if bundle exist
-        run: |
-          [[ -f ./dist/bundle.js ]] && echo "This file exists"
-        
+          ENVIRONMENT: production        
 
       # Push the SBAB's HTML to github-pages
       - name: GitHub Pages action
