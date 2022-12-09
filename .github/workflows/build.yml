@@ -7,10 +7,6 @@ on:
 
 # This job installs dependencies, builds the SBAB, and pushes it to `gh-pages`
 jobs:
-  env:
-    ENVIRONMENT: production
-    TICKET_MASTER_API_KEY: ${{ secrets.TICKET_MASTER_API_KEY }}
-    YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
   deploy-SBAB:
     runs-on: ubuntu-latest
     steps:
@@ -22,10 +18,12 @@ jobs:
           yarn
       # Build the SBAB
       - name: Build the SBAB
+        env:
+          ENVIRONMENT: production
+          TICKET_MASTER_API_KEY: ${{ secrets.TICKET_MASTER_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
-          yarn webpack 
-        with:
-          ENVIRONMENT: 'production'
+          yarn webpack
 
       # Push the SBAB's HTML to github-pages
       - name: GitHub Pages action
