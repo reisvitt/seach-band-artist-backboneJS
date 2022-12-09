@@ -14,19 +14,19 @@ jobs:
   deploy-SBAB:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    # Install dependencies
-    - name: Install dependencies
-      run: |
-        yarn
-    # Build the SBAB
-    - name: Build the SBAB
-      run: |
-        yarn webpack 
-      with:
-        ENVIRONMENT: 'production'
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          yarn
+      # Build the SBAB
+      - name: Build the SBAB
+        run: |
+          yarn webpack 
+        with:
+          ENVIRONMENT: 'production'
 
-    # Push the SBAB's HTML to github-pages
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+      # Push the SBAB's HTML to github-pages
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.6.1
